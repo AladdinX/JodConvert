@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>محول عملات بسيط</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      padding: 20px;
+    }
+    input {
+      padding: 8px;
+      font-size: 16px;
+      width: 200px;
+    }
+    .result {
+      margin-top: 15px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>تحويل من الدينار الأردني</h2>
+
+  <label>
+    السعر بالأردني:
+    <br>
+    <input type="number" id="jodInput" placeholder="أدخل السعر">
+  </label>
+
+  <div class="result">
+    <p>السعر في مصر: <span id="egp">0</span></p>
+    <p>السعر في سوريا: <span id="syp">0</span></p>
+  </div>
+
+  <script>
+    const jodInput = document.getElementById("jodInput");
+    const egpSpan = document.getElementById("egp");
+    const sypSpan = document.getElementById("syp");
+
+    jodInput.addEventListener("input", function () {
+      const jodValue = Number(jodInput.value);
+
+      const egp = jodValue * 80.7;
+      const syp = jodValue * 18000;
+
+      egpSpan.textContent = egp.toFixed(2);
+      sypSpan.textContent = syp.toFixed(0);
+    });
+  </script>
+
+</body>
+</html>
