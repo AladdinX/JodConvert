@@ -33,22 +33,26 @@
 
   <div class="result">
     <p>السعر في مصر: <span id="egp">0</span></p>
-    <p>السعر في سوريا: <span id="syp">0</span></p>
+    <p>السعر القديم في سوريا: <span id="syp">0</span></p>
+ <p>السعر  الجديد في سوريا: <span id="nySyp">0</span></p>
+
   </div>
 
   <script>
     const jodInput = document.getElementById("jodInput");
     const egpSpan = document.getElementById("egp");
     const sypSpan = document.getElementById("syp");
+const nySypSpan = document.getElementById("nySyp");
 
     jodInput.addEventListener("input", function () {
       const jodValue = Number(jodInput.value);
 
       const egp = jodValue * 80.7;
-      const syp = jodValue * 18;
-
+      const syp = jodValue * 18000;
+      const newSyp = jodValue * 180;
       egpSpan.textContent = egp.toFixed(2);
       sypSpan.textContent = syp.toFixed(0);
+      nySypSpan.textContent = nySyp.toFixed(0);
     });
   </script>
 
